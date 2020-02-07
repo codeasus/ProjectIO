@@ -2,8 +2,16 @@
 {% block content %}
     <h3>Home : Orhan Rosenfeld</h3>    
          {% for post in posts %}
-            <h4>{{ post.title }}</h4>
-            <h5>By {{ post.author }} on {{ post.post_date }}</h5>
-            <p>{{ post.content }}</p>
+            <article class="media content-section">
+                <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.post_date }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
         {% endfor %}
 {% endblock %}
+
