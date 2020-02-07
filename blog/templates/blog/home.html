@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h3>Home : Orhan Rosenfeld</h3>    
+         {% for post in posts %}
+            <h4>{{ post.title }}</h4>
+            <h5>By {{ post.author }} on {{ post.post_date }}</h5>
+            <p>{{ post.content }}</p>
+        {% endfor %}
+{% endblock %}

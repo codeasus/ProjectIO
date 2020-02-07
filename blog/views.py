@@ -3,9 +3,31 @@ from django.http import HttpResponse
 
 
 
+posts = [
+    {
+        'author' : 'Orhan Rosenfeld',
+        'title' : 'Graphic Programming',
+        'content' : 'Graphic programming content.',
+        'post_date' : 'Febuary 2, 2020'
+    },
+    {
+        'author' : 'Anar Abbasov',
+        'title' : 'Machine Learning',
+        'content' : 'Machine learning content.',
+        'post_date' : 'December 28, 2019'
+    }
+]
+
+context = {
+    "posts" : posts,
+    "projectTitle" : "ProjectIO",
+}
+
+
 def home(request) :
-    return HttpResponse("<h1>Hello, MotherFucker!</h1>")
+
+    return render(request, "blog/home.html", context)
 
 
 def store(request) :
-    return HttpResponse("<h2>Store section</h2>")
+    return render(request, "blog/store.html", context)
