@@ -1,25 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
-
-
-posts = [
-    {
-        'author' : 'Orhan Rosenfeld',
-        'title' : 'Graphic Programming',
-        'content' : 'Graphic programming content.',
-        'post_date' : 'Febuary 2, 2020'
-    },
-    {
-        'author' : 'Anar Abbasov',
-        'title' : 'Machine Learning',
-        'content' : 'Machine learning content.',
-        'post_date' : 'December 28, 2019'
-    }
-]
 
 context = {
-    "posts" : posts,
+    "posts" : Post.objects.all(),
     "projectTitle" : "ProjectIO",
 }
 

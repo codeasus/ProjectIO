@@ -7,3 +7,6 @@ class Post(models.Model) :
     content = models.TextField()
     post_date = models.DateTimeField(default = timezone.now) #auto_now = True #auto_now_add = True
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
