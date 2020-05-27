@@ -10,5 +10,5 @@ context = {
 def home(request) :
     return render(request, "blog/home.html", context)
 
-def store(request) :
-    return render(request, "blog/store.html")
+def about(request) :
+    return render(request, "blog/about.html", context)
